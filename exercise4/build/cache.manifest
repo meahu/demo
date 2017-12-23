@@ -1,0 +1,10 @@
+CACHE MANIFEST
+# Time: Sat Dec 23 2017 21:08:08 GMT+0800 (中国标准时间)
+# koatesting
+
+CACHE:
+../public/css/vendor.css
+
+NETWORK:
+http://cdn.bootcss.com/ *
+http://localhost:3000/ *

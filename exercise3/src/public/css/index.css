@@ -1,0 +1,140 @@
+* {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	background:orange;
+}
+
+.praise {
+	position: relative;
+	width: 70px;
+	height: 97px;
+	margin: 200px auto;
+	background: #FFCAAA;
+	border-radius: 10px 0px 0px 10px;
+	border: 1px solid #B19473;
+	cursor: pointer;
+}
+
+.praise.disable {
+	-webkit-filter: grayscale(1);
+}
+
+.praise:before {
+	content: '';
+	position: absolute;
+	top: 16px;
+	left: -60px;
+	width: 60px;
+	height: 66px;
+	background: #FFCAAA;
+	border-top: 1px solid #B19473;
+}
+
+.praise:after {
+	content: '';
+	position: absolute;
+	top: 16px;
+	left: 0px;
+	width: 6px;
+	height: 1px;
+	background: #B19473;
+}
+
+.praise .finger {
+	position: absolute;
+	top: -1px;
+	left: 53px;
+	width: 25px;
+	height: 25px;
+	background: #FFCAAA;
+	border-radius: 0px 25px 25px 0px;
+	border: 1px solid #B19473;
+	border-left-width: 0px;
+}
+
+.praise .finger:before {
+	content: '';
+	position: absolute;
+	width: 13px;
+	height: 18px;
+	top: 2px;
+	left: 8px;
+	border-radius: 0px 8px 8px 0px;
+	background: linear-gradient(right, rgba(255,255,255,0.8), rgba(255,255,255,0.1));
+	background: -webkit-linear-gradient(right, rgba(255,255,255,0.8), rgba(255,255,255,0.1));
+}
+
+.praise .finger0 {
+	top: -29px;
+	left: 2px;
+	z-index: 0;
+	width: 46px;
+	transform: rotateZ(-67deg);
+}
+
+.praise .finger0:before {
+	left: 29px;
+}
+
+.praise .finger0:after {
+	content: '';
+	position: absolute;
+	width: 13px;
+	height: 18px;
+	top: 2px;
+	left: 8px;
+	border-radius: 0px 8px 8px 0px;
+	background: linear-gradient(right, rgba(0,0,0,0.15), rgba(0,0,0,0.001));
+	background: -webkit-linear-gradient(right, rgba(100,100,100,0.15), rgba(0,0,0,0.001));
+}
+
+.praise .finger1:after {
+	content: '';
+	position: absolute;
+	width: 13px;
+	height: 18px;
+	top: 0px;
+	left: -28px;
+	background: #FFCAAA;
+}
+
+.praise .finger2 {
+	top: 23px;
+}
+
+.praise .finger3 {
+	top: 47px;
+}
+
+.praise .finger4 {
+	top: 71px;
+}
+
+.praise .add {
+	position: absolute;
+	left: 120px;
+	bottom: 38px;
+	font-size: 24px;
+	font-weight: 600;
+	color: #e81717;
+	opacity: 0;
+}
+
+.praise .add.active {
+	animation: myanimation 0.5s infinite;
+}
+
+@keyframes myanimation {
+	0% {
+		bottom: 38px;
+		opacity: 1;
+	}
+
+	100% {
+		bottom: 108px;
+		opacity: 0;
+	}
+}

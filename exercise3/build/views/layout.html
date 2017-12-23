@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>{% block title %}My Site{% endblock %}</title>
+		{% block head %}
+			<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+		    <script src="https://cdn.bootcss.com/axios/0.17.1/axios.js"></script>
+		    <script src="https://cdn.bootcss.com/x-tag/1.5.11/x-tag-core.js"></script>
+		{% endblock %}
+		{% block styles %}{% endblock %}
+	<link href="../public/css/vendor-b865e.css" rel="stylesheet"></head>
+	<body>
+		{% block content %}{% endblock %}
+	<script type="text/javascript" src="../public/js/common/vendor-b865e.min.js"></script><script type="text/javascript" src="../public/js/index-b865e.js"></script><script type="text/javascript" src="../public/js/tag-b865e.js"></script></body>
+	{% block script %}{% endblock %}
+</html>

@@ -1,6 +1,9 @@
 .DS_Store
 node_modules/
+exercise1/node_modules/
 exercise2/node_modules/
+exercise3/node_modules/
+koaweb 1/node_modules/
 dist/
 npm-debug.log*
 yarn-debug.log*

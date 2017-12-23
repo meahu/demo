@@ -138,3 +138,28 @@
     body {
         background: radial-gradient(ellipse at top left, #94D28A 0%, #D0D8CB 57%);
     }
+
+
+    .star{ width: 0;height: 0; margin: 300px 300px;color: #f00;  position: relative;
+        display: block; border-right: 100px solid transparent; border-bottom: 70px solid #f00; border-left: 100px solid transparent;
+        -moz-transform: rotate(35deg);
+        -webkit-transform: rotate(35deg);
+        -ms-transform: rotate(35deg);
+        -o-transform: rotate(35deg);
+    }
+    .star:before { width: 0;height: 0;
+        position: absolute; display: block; top: -45px;left: -65px;
+        border-bottom: 80px solid #f00; border-left: 30px solid transparent; border-right: 30px solid transparent;  content: '';
+        -webkit-transform: rotate(-35deg);
+        -moz-transform: rotate(-35deg);
+        -ms-transform: rotate(-35deg);
+        -o-transform: rotate(-35deg);
+    }
+    .star:after { width: 0;height: 0;
+        position: absolute; display: block;top: 3px;    left: -105px;color: #F00;
+        border-right: 100px solid transparent; border-bottom: 70px solid #f00;border-left: 100px solid transparent;    content: '';
+        -webkit-transform: rotate(-70deg);
+        -moz-transform: rotate(-70deg);
+        -ms-transform: rotate(-70deg);
+        -o-transform: rotate(-70deg);
+    }

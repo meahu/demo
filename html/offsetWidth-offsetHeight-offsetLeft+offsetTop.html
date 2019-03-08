@@ -30,7 +30,7 @@
                 "<p>offsetLeft：" + test.offsetLeft + "</p>" +
                 "<p>offsetTop：" + test.offsetTop + "</p>" + 
                 "<div>总结：offsetWidth 和 offsetHeight 与自身元素有关，由 border + padding + 元素本身的宽/高度 组成</div>" +
-                "<div>总结：offsetLeft 和 offsetTop，对象元素边界的左上角相对于浏览器左上角的位置，与其父元素有关，自身的 margin 有关，自身为绝对定位且设置了 left 和 top 也有关</div>";
+                "<div>总结：offsetLeft 和 offsetTop，对象元素边界的左上角顶点相对于offsetParent的左上角顶点的水平偏移量，与其父元素有关，自身的 position: fixed,relative,absolute 有关</div>";
 
         // 参考：https://blog.csdn.net/Fiona_lms/article/details/52927025、https://blog.csdn.net/w390058785/article/details/80461845
         // 待细究：

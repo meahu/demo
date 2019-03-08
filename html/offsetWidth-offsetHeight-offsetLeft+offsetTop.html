@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>offsetWidth、offsetHeight、offsetLeft、offsetTop 的总结</title>
+    </head>
+
+    <style>
+        * {margin: 0; padding: 0;}
+        #test {
+            width:400px;
+            height:200px;
+            margin: 10px;
+            padding:20px;
+            background:#eee;
+            border: 5px solid #ddd;
+        }
+    </style>
+
+    <body>
+        <div style="padding:10px;">
+            <div id="test"></div>
+        </div>
+    </body>
+
+    <script>
+        var test = document.getElementById("test");
+            test.innerHTML = "<p>offsetWidth：" + test.offsetWidth + "</p>" +
+                "<p>offsetHeight：" + test.offsetHeight + "</p>" +
+                "<p>offsetLeft：" + test.offsetLeft + "</p>" +
+                "<p>offsetTop：" + test.offsetTop + "</p>" + 
+                "<div>总结：offsetWidth 和 offsetHeight 与自身元素有关，由 border + padding + 元素本身的宽/高度 组成</div>" +
+                "<div>总结：offsetLeft 和 offsetTop，对象元素边界的左上角相对于浏览器左上角的位置，与其父元素有关，自身的 margin 有关，自身为绝对定位且设置了 left 和 top 也有关</div>";
+
+        // 参考：https://blog.csdn.net/Fiona_lms/article/details/52927025
+        // 待细究：
+        // scrollTop、scrollLeft、scrollWidth、scrollHeight
+        // clientTop、clientLeft、clientWidth、clientHeight
+    </script>
+</html>

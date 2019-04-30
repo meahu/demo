@@ -18,7 +18,7 @@ node.js + express + ejs + multer
 
 express 是 node.js 的框架
 
-ejs 模板引擎。[查看 express 如何配置 ejs](https://github.com/meahu/demo/issues/7 "查看 express 如何配置 ejs")
+ejs 是模板引擎。[查看 express 如何配置 ejs](https://github.com/meahu/demo/issues/7 "查看 express 如何配置 ejs")
 
 multer 中间件，处理上传的文件。将上传到缓存的文件保存到相应目录下，并返回相关参数
 

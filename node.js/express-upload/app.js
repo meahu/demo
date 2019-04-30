@@ -8,22 +8,22 @@ app.use(express.static('upload'))
 
 // 使用原始的 form 上传文件
 app.get('/form', (req, res, next) => {
-    res.render('form.ejs', {title: '使用原始的 form 进行文件上传'});
+    res.render('form.ejs', {title: '使用原始的 form 上传文件'});
 })
 
 // 使用 iframe 实现无刷新上传文件
 app.get('/iframe', (req, res, next) => {
-    res.render('iframe.ejs', {title: '仿ajax页面无刷新上传文件'});
+    res.render('iframe.ejs', {title: '使用 iframe 实现无刷新上传文件'});
 })
 
 // 使用 iframe 实现无刷新上传文件 优化版
 app.get('/iframex', (req, res, next) => {
-    res.render('iframex.ejs', {title: '仿ajax页面无刷新上传文件 优化版'});
+    res.render('iframex.ejs', {title: '使用 iframe 实现无刷新上传文件 优化版'});
 })
 
-// 使用 formdata
+// 用 formdata 实现无刷新上传文件
 app.get('/formdata', (req, res, next) => {
-    res.render('formdata.ejs', {title: '使用 formdata'});
+    res.render('formdata.ejs', {title: '用 formdata 实现无刷新上传文件'});
 })
 
 // 图片上传处理

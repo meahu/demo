@@ -18,6 +18,7 @@
 
 <script>
     document.querySelector('input[type=submit]').onclick = e => {
+        // 去掉浏览器默认行为
         if (e.preventDefault) {
             e.preventDefault();
         } else {

@@ -1,18 +1,17 @@
 # 文件上传
 多种方式实现文件上传
 
-## 安装使用
-
-安装依赖：npm install
-
-运行服务：node app.js
-
-
 ## 功能
 1. 使用原始的 form 上传文件（localhost:3000/form）
 2. 使用 iframe 实现无刷新上传文件（localhost:3000/iframex）
 3. 使用 formdata 实现无刷新上传文件（localhost:3000/formdata）
 3. 使用 FileReader 实现无刷新上传文件（localhost:3000/fileReader，未完成）
+
+## 安装使用
+
+安装依赖：npm install
+
+运行服务：node app.js
 
 ## 技术栈
 node.js + express + ejs + multer

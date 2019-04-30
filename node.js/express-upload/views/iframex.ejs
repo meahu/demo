@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= title %></title>
+</head>
+<body>
+    <div>
+        <h2><%= title %></h2>
+        <form action="/uploadImg" method="post" enctype="multipart/form-data">
+            <input type="file" name="img">
+            <input type="submit" value="提交">
+        </form>
+    </div>
+</body>
+
+<script>
+    document.querySelector('input[type=submit]').onclick = e => {
+        if (e.preventDefault) {
+            e.preventDefault();
+        } else {
+            e.returnValue = fasle;
+        }
+
+        let form = document.querySelector('form');
+
+        let iframe = document.createElement("iframe");
+            iframe.width = 0;
+            iframe.height = 0;
+            iframe.border = 0;
+            iframe.name = "form-iframe";
+            iframe.id = "form-iframe";
+            // iframe.setAttribute("style", "width:0;height:0;border:none");
+            form.appendChild(iframe);
+            form.target = "form-iframe";
+
+        
+        iframe.onload = function(){
+            var img = document.createElement("img");
+            //获取iframe的内容，即服务返回的数据
+            var responseData = this.contentDocument.body.textContent || this.contentWindow.document.body.textContent;
+            img.src = JSON.parse(responseData).data;
+            form.insertBefore(img, document.querySelector('input[type=submit]'));
+            //删掉iframe
+            setTimeout(function(){
+                var _frame = document.getElementById("form-iframe");
+                _frame.parentNode.removeChild(_frame);
+            }, 100);
+        }
+
+        form.submit(); 
+    }
+</script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= title %></title>
+</head>
+<body>
+    <div>
+        <h2><%= title %></h2>
+        <form method="post" action="/uploadImg" enctype="multipart/form-data" target="iframe">
+            <input type="file" name="img"></input>
+            <input id="subbtn" type="submit" >
+        </form> 
+    </div>
+        
+    <iframe class="aaaa" name="iframe"></iframe>
+</body>
+<script>
+    document.querySelector('.aaaa').onload = function(){
+        // 这里可以操作 iframe 里面的内容
+    }
+</script>
+</html>

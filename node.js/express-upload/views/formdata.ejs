@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= title %></title>
+</head>
+<body>
+    <div>
+        <h2><%= title %></h2>
+        <form action="/uploadImg" method="post" enctype="multipart/form-data">
+            <input type="file" name="img">
+            <input type="submit" value="提交">
+        </form>
+    </div>
+</body>
+
+<script>
+    document.querySelector('input[type=submit]').onclick = e => {
+        if (e.preventDefault) {
+            e.preventDefault();
+        } else {
+            e.returnValue = fasle;
+        }
+
+        let form = document.querySelector('form');
+        let formData = new FormData(form);
+        let xhr = new XMLHttpRequest();
+        
+        xhr.open('post', '/uploadImg');
+        xhr.send(formData);
+        xhr.onload = function(){
+            if(this.status === 200){
+                var img = document.createElement("img");
+                img.src = JSON.parse(this.responseText).data;
+                form.insertBefore(img, document.querySelector('input[type=submit]'));
+            }
+        }
+    }  
+</script>
+</html>

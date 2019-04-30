@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= title %></title>
+</head>
+<body>
+    <!-- 这里想用 FileReader 来实现，没成功 -->
+    <h2>这里想用 FileReader 来实现，没成功</h2>
+    <form action="/uploadImg" method="post" enctype="multipart/form-data">
+        <input type="file" name="img">
+        <input type="submit" value="提交">
+    </form>
+</body>
+<script>
+    document.querySelector('input[type=submit]').onclick = e => {
+        if (e.preventDefault) {
+            e.preventDefault();
+        } else {
+            e.returnValue = fasle;
+        }
+
+        let form = document.querySelector('form');
+        let xhr = new XMLHttpRequest();
+        
+        xhr.open('post', '/uploadImg');
+        xhr.setRequestHeader("Content-Type", "application/octet-stream");
+        var fr = new FileReader();
+        fr.onload = function(){
+            xhr.sendAsBinary(this.result);
+        }
+        xhr.onload = function(){
+        }
+　      //读取input文件内容，放到fileReader的result字段里
+        fr.readAsBinaryString(form["img"].files[0]);
+
+        if(typeof XMLHttpRequest.prototype.sendAsBinary === 'undefined'){
+            XMLHttpRequest.prototype.sendAsBinary = function(text){
+            var data = new ArrayBuffer(text.length);
+            var ui8a = new Uint8Array(data, 0);
+            for (var i = 0; i < text.length; i++){ 
+                ui8a[i] = (text.charCodeAt(i) & 0xff);
+            }
+            this.send(ui8a);
+            }
+        }
+    }    
+</script>
+</html>

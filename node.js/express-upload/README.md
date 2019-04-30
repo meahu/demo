@@ -25,7 +25,10 @@ multer 中间件，处理上传的文件。将上传到缓存的文件保存到�
 
 ## 知识扩展
 
-## FormData
+### form 
+target 平常比较少用到的属性
+
+### FormData
 FormData 是 HTML5 的内容，它有2个用途：
 1. 组装表单元素的 name 与 value 的数据
 2. 异步上传二进制文件
@@ -41,6 +44,8 @@ FormData 是 HTML5 的内容，它有2个用途：
 | multipart/form-data | 发送二进制的文件 |
 
 ## 参考
+http://www.cnblogs.com/fangjins/archive/2012/08/19/2645631.html
+
 https://segmentfault.com/a/1190000012327982
 
 https://www.cnblogs.com/yincheng/p/5011441.html

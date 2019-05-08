@@ -1,7 +1,7 @@
 <script>
 	// 简易订阅者和发布者
 	function subscriberAndDeliver() {
-		this.subscriber = []
+		this.subscriber = [];
 
 		this.addSubscriber = function (cb) {
 			this.subscriber.push(cb)

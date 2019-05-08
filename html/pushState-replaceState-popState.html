@@ -1,0 +1,27 @@
+<script>
+    /*
+        vue 的路由有一个类型是 history，它的的原理是 h5 的这些属性：history.pushState()、history.replaceState()、onpopstate
+        前两个是改变历史记录，也就是改变路由，后一个是改变历史记录时的事件。当路由改变时，事件就触发了，然后根据路由取更新视图
+        history.pushState 是增加历史记录
+        history.replaceState() 时替换、更新当前的记录
+
+        注意点：
+        1、push 或者 replace 并不会导致浏览器加载，也不会检查文件是否存在
+        2、地址栏的前进，后退按钮，history.back()，history.go() 才会触发 onpopstate（疑问：那 pushState 不出发 onpopstate，那怎么更新视图）
+    */
+
+    // 自己试试吧：
+    // window.onpopstate = function(event) {
+    //   alert("location: " + document.location + ", state: " + JSON.stringify(event.state));
+    // };
+    window.addEventListener("popstate", function() {
+		alert(1);																
+	});
+    //绑定事件处理函数. 
+    history.pushState({page: 1}, "title 1", "?page=1");    //添加并激活一个历史记录条目 http://example.com/example.html?page=1,条目索引为1
+//     history.pushState({page: 2}, "title 2", "?page=2");    //添加并激活一个历史记录条目 http://example.com/example.html?page=2,条目索引为2
+//     history.replaceState({page: 3}, "title 3", "?page=3"); //修改当前激活的历史记录条目 http://ex..?page=2 变为 http://ex..?page=3,条目索引为3
+//     history.back(); // 弹出 "location: http://example.com/example.html?page=1, state: {"page":1}"
+//     history.back(); // 弹出 "location: http://example.com/example.html, state: null
+// history.go(2);  // 弹出 "location: http://example.com/example.html?page=3, state: {"page":3}
+</script>

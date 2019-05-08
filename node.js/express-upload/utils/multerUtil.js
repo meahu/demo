@@ -3,6 +3,7 @@ const multer = require('multer');
 
 const uploadFolder = 'upload';
 
+
 const createFolder = function(folder){
     try{
         fs.accessSync(folder); 
@@ -13,7 +14,11 @@ const createFolder = function(folder){
 
 // 创建图片保存目录
 createFolder(uploadFolder);
-
+/* 
+* TODO
+* 
+*/
+// FIXME
 // multer 的配置，这里配置目标目录与文件命名方式
 storage = multer.diskStorage({
     // 目标目录

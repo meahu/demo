@@ -1,0 +1,10 @@
+https://zhidao.baidu.com/question/530531643.html
+https://github.com/daiyunchao/DateHelper
+https://github.com/nivin-studio/MagicTime
+```
+日期转时间戳
+export function date2timestamp(date) {
+    let date = new Date(date);
+    return date.getTime();
+}
+```

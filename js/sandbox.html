@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>沙箱，没理解，先放着 https://juejin.im/post/5d8d76b8e51d45781332e928</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function compileCode(src) {
+        src = 'with (exposeObj) { ' + src + '}';
+        return new Function('exposeObj', src);
+    }
+
+    function proxyObj(originObj) {
+        let exposeObj = new Proxy(originObj, {
+            has: (target, key) => {
+                debugger
+                if(["console", "Math", "Date"].indexOf(key) >= 0) {
+                    return target[key]
+                }
+                if(!target.hasOwnProperty[key]) {
+                    throw new Error(`Illegal operation for key </span><span><span class="hljs-string"><span class="hljs-subst">${key}</span></span></span><span class="hljs-string">`);
+                }
+                return target[key]
+            }
+        })
+        return exposeObj;
+    }
+
+    function createSandbox(src, obj) {
+        let proxy = proxyObj(obj);
+        compileCode(src).call(proxy, proxy);
+    }
+
+    const testObj = {
+        value: 1,
+        a: {
+            b: 1
+        }
+    }
+    createSandbox("value='haha'; console.log(a)", testObj);
+</script>
+</html>
